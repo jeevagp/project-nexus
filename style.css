@@ -1,3 +1,4 @@
+/* Base styles */
 * {
     margin: 0;
     padding: 0;
@@ -13,14 +14,10 @@
     position: absolute;
 }
 
-
 .navbar {
     display: flex;
     align-items: center;
-    padding: 20px;
-    padding-left: 50px;
-    padding-right: 30px;
-    padding-top: 50px;
+    padding: 20px 30px 0 50px;
 }
 
 nav {
@@ -38,28 +35,20 @@ nav ul li {
     margin-right: 70px;
 }
 
-nav ul li a {
+nav ul li a,
+nav ul li button {
     text-decoration: none;
     font-size: 19px;
     color: rgb(199, 200, 204);
     font-family: sans-serif;
-}
-
-nav ul li button {
-    font-size: 20px;
-    color: white;
-    outline: none;
-    border: none;
     background: transparent;
+    border: none;
+    outline: none;
     cursor: pointer;
-    font-family: sans-serif;
 }
 
+nav ul li a:hover,
 nav ul li button:hover {
-    color: aqua;
-}
-
-nav ul li a:hover {
     color: aqua;
 }
 
@@ -75,9 +64,7 @@ a {
 
 p {
     text-align: center;
-    padding-left: 18%;
-    padding-right: 18%;
-    padding-top: 3%;
+    padding: 3% 18%;
     color: hsl(208, 100%, 97%);
     font-size: 150%;
     font-family: Playfair Display;
@@ -94,8 +81,7 @@ h1 {
     width: 380px;
     height: 480px;
     position: relative;
-    margin: 2% auto;
-    margin-top: 10%;
+    margin: 10% auto 2% auto;
     background: rgba(0, 0, 0, 0.3);
     padding: 10px;
     overflow: hidden;
@@ -129,27 +115,26 @@ h1 {
     transition: .5s;
 }
 
-.input-group-login {
-    top: 150px;
+.input-group-login,
+.input-group-register {
     position: absolute;
     width: 280px;
     transition: .5s;
 }
 
+.input-group-login {
+    top: 150px;
+}
+
 .input-group-register {
     top: 120px;
-    position: absolute;
-    width: 280px;
-    transition: .5s;
 }
 
 .input-field {
     width: 100%;
     padding: 10px 0;
     margin: 5px 0;
-    border-left: 0;
-    border-top: 0;
-    border-right: 0;
+    border: none;
     border-bottom: 1px solid #d8d7d7;
     outline: none;
     background: transparent;
@@ -182,16 +167,110 @@ span {
     left: 50px;
 }
 
-#login input {
+#login input,
+#register input {
     color: white;
-    font-size: 15;
+    font-size: 15px;
 }
 
 #register {
     left: 450px;
 }
 
-#register input {
-    color: white;
-    font-size: 15;
+/* Media Queries */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .navbar {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    nav ul li {
+        margin-right: 30px;
+    }
+
+    p {
+        padding-left: 10%;
+        padding-right: 10%;
+        font-size: 120%;
+    }
+
+    h1 {
+        font-size: 250%;
+    }
+
+    .form-box {
+        width: 320px;
+        margin-top: 8%;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px 20px 0 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        text-align: left;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    nav ul li a,
+    nav ul li button {
+        font-size: 17px;
+    }
+
+    p {
+        padding-left: 5%;
+        padding-right: 5%;
+        font-size: 100%;
+    }
+
+    h1 {
+        font-size: 200%;
+        margin-top: 8%;
+    }
+
+    .form-box {
+        width: 100%;
+        height: auto;
+        margin-top: 15%;
+        padding: 20px;
+    }
+
+    .input-group-login,
+    .input-group-register {
+        width: 100%;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+
+    .button-box {
+        width: 100%;
+        margin: 30px auto;
+    }
+
+    .toggle-btn {
+        padding: 10px 20px;
+    }
+
+    #btn {
+        width: 50%;
+    }
+
+    #register {
+        left: 0;
+    }
 }
